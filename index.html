@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Alarm App in Js</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -14,34 +14,38 @@
 </head>
 
 <body>
-    <section class="container">
-        <div class="alarmMain">
-            <div class="headingMain">
-                <h2>Add Alarms at Any Time</h2>
-            </div>
-            <form>
-                <div>
-                    <input type="datetime-local" name="alarm" id="alarm" />
-                    <select name="" id="alarmType" required>
-                        <option value="" selected disabled>Select</option>
-                        <option value="All">All</option>
-                        <option value="Sleep">Sleep</option>
-                        <option value="Work">Work</option>
-                    </select>
-                </div>
-                <button type="submit" id="alarmBtn">Add Alarm</button>
+
+    <!-- SET ALARMS SECTION -->
+    <section class="set-alarm">
+        <div class="bg-shadow">
+            <div class="container dflex">
                 <p id="message"> </p>
-            </form>
+                <h1 class="title">Set Your Alarms Here</h1>
+                <form>
+                    <div class="input-group">
+                        <input type="datetime-local" name="alarm" id="alarm" />
+                        <select name="" id="alarmType" required>
+                            <option value="" selected disabled>Select</option>
+                            <option value="All">All</option>
+                            <option value="Sleep">Sleep</option>
+                            <option value="Work">Work</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="alarmBtn" class="btn">Add Alarm</button>
+                </form>
+            </div>
         </div>
     </section>
-    <section class="listContainer">
-        <h2>All the Alarms that you Set.</h2>
-        <div class="alarmsListMain">
+
+    <!-- ALL ALARMS AS LIST -->
+    <section class="alarms">
+        <div class="container">
+            <h2>Alarms that you Set.</h2>
             <ul id="alarmsList">
             </ul>
         </div>
     </section>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

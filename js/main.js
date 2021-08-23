@@ -178,23 +178,23 @@ function stopAlarm(audio) {
 
 function playAlarm(type, id) {
   if (type.toLowerCase() === "all") {
-    let audio = new Audio("all.mp3");
+    let audio = new Audio("../static/audio/all.mp3");
     audio.play();
     setTimeout(() => {
       stopAlarm(audio);
-    }, 60000);
+    }, 55000);
   } else if (type.toLowerCase() === "sleep") {
-    let audioSleep = new Audio("sleep.mp3");
+    let audioSleep = new Audio("../static/audio/sleep.mp3");
     audioSleep.play();
     setTimeout(() => {
       stopAlarm(audioSleep);
-    }, 60000);
+    }, 31000);
   } else {
-    let audioWork = new Audio("work.mp3");
+    let audioWork = new Audio("../static/audio/work.mp3");
     audioWork.play();
     setTimeout(() => {
       stopAlarm(audioWork);
-    }, 60000);
+    }, 45000);
   }
   let status = document.getElementById(id);
   status.textContent = "Running";

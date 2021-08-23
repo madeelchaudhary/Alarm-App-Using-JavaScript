@@ -1,0 +1,257 @@
+* {
+  box-sizing: border-box;
+  &::selection {
+    background: #5f27cd;
+    color: white;
+  }
+}
+
+// GENERAL STYLING
+
+:root {
+  --container-width: 86%;
+  --container-max-width: 700px;
+
+  --fs-h1: 2.5rem;
+  --fs-h2: 1.85rem;
+  --fs-body: 1rem;
+}
+
+body {
+  font-family: Poppins, serif;
+  font-size: var(--fs-body);
+  margin: 0;
+}
+
+.bg-shadow {
+  width: var(--container-width);
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+
+  background: rgba(109, 109, 109, 0.24) url("../static/img/bg.jfif") no-repeat
+    center;
+  background-blend-mode: multiply;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.1rem 0 #333;
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+
+  &:hover {
+    box-shadow: 0 5px 15px 0 #333;
+    transform: translateZ(70px);
+  }
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+// TYPOGRAPHY STYLING
+@media (min-width: 750px) {
+  :root {
+    --fs-h1: 3rem;
+    --fs-h2: 2.2rem;
+    --fs-body: 1.1rem;
+  }
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+.title {
+  color: #130f40;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.527);
+  margin-bottom: 0.7em;
+}
+
+// SET ALARM SECTION
+.set-alarm {
+  min-height: 100vh;
+  background: url("../static/img/bg.jfif") no-repeat center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    padding: 2rem 0;
+  }
+}
+
+form {
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.527);
+  background-blend-mode: screen;
+  padding: 4rem 1rem;
+  max-width: 550px;
+
+  .input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  input,
+  select,
+  .btn {
+    font-weight: 500;
+    font-size: 1.6rem;
+    background-color: #c7ecee;
+    color: rgb(78, 76, 76);
+    border: 2px solid rgb(97, 97, 97);
+    box-shadow: 0 0 7px 0 #130f40;
+
+    border-radius: 0.3rem;
+    padding: 0.7rem 1.1rem;
+    outline: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: 2px solid #5f27cd;
+      outline-offset: 4px;
+    }
+  }
+
+  input {
+    margin-right: 0.8em;
+    position: relative;
+  }
+
+  .btn {
+    margin: 1em 0;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+}
+
+// ALARMS SECTION
+.alarms {
+  min-height: 100vh;
+  background: url("../static/img/bg2.jfif") no-repeat center;
+  padding: 4rem 0;
+  display: flex;
+
+  .container {
+    width: var(--container-width);
+    max-width: calc(1.2 * var(--container-max-width));
+    display: grid;
+    grid-template-rows: min-content 1fr;
+  }
+
+  h2 {
+    justify-self: center;
+    color: #130f40;
+    text-align: center;
+    font-size: var(--fs-h1);
+    background-color: rgba(255, 255, 255, 0.527);
+  }
+}
+
+#alarmsList {
+  align-self: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  align-items: center;
+
+  width: 100%;
+
+  li {
+    background-color: #341f97;
+    border-radius: 0.5rem;
+    font-size: 1.4rem;
+    margin: 10px 0;
+    font-weight: 500;
+    color: white;
+    display: flex;
+
+    div {
+      padding: 0.3rem 0.6rem;
+      display: inline-block;
+      width: 80%;
+    }
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20%;
+      padding: 0.3rem 0.6rem;
+      background-color: #ff9f43;
+    }
+    .currentPlaying {
+      background-color: yellowgreen;
+      font-weight: 700;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  :root {
+    --container-width: 90%;
+  }
+
+  // Form Section Start
+  form {
+    padding: 3.5rem 0;
+
+    .input-group {
+      flex-direction: column;
+    }
+
+    input,
+    select,
+    .btn {
+      padding: 0.6em 0.5em;
+      font-size: 1.1rem;
+      width: 97%;
+      margin: 0;
+    }
+
+    .btn {
+      margin: 0 auto;
+    }
+
+    input {
+      margin-bottom: 1em;
+    }
+  }
+  // Form Section End
+
+  // ALARM SECTION
+  #alarmsList {
+    li {
+      font-size: 1.15rem;
+    }
+  }
+}
+
+
+.messageSuccess {
+  background-color: lightgreen;
+}
+.messageError {
+  background-color: lightcoral;
+}
+#message {
+  padding: 0.4rem 0.8rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
+  border-radius: 0.5rem;
+  display: none;
+}
